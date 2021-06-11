@@ -12,4 +12,4 @@
       
   - name: run server
     shell:
-      cmd: nohup node /home/ubuntu/app/server.js &
+      cmd: nohup DB_HOST='{{ lookup('env', 'DB_HOST') }}' DB_USER='{{ lookup('env', 'DB_USER') }}' DB_PASS='{{ lookup('env', 'DB_PASS') }}' DB_NAME='{{ lookup('env', 'DB_NAME') }}' node /home/ubuntu/app/server.js &
